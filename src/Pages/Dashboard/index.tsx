@@ -130,18 +130,19 @@ const Dashboard: FC = () => {
                     })
                     .then((res) => {
                       snack.onResponse({
-                        message: res.data.username+" has been created",
+                        message: res.data.username + " has been created",
                         status: res.status,
                       });
                       setUsers((p) => {
                         return [...p, res.data];
                       });
-                    }).catch(err =>{
+                    })
+                    .catch((err) => {
                       snack.onResponse({
                         message: err.response.data.message,
                         status: err.response.status,
                       });
-                    })
+                    });
                 }}
               >
                 <Form className={style.form}>

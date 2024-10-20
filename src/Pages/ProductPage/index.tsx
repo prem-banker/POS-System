@@ -10,7 +10,14 @@ import TextField from "../../Components/TextField";
 import { Form, Formik } from "formik";
 import SelectField from "../../Components/SelectFeild";
 import ImagePicker from "../../Components/ImagePicker";
-import { addProduct, removeProduct, set_categories, set_products, set_units, updateProduct } from "../../store/Actions";
+import {
+  addProduct,
+  removeProduct,
+  set_categories,
+  set_products,
+  set_units,
+  updateProduct,
+} from "../../store/Actions";
 import { productShcema } from "../../schema";
 import Select from "../../Components/Select";
 import SearchField from "../../Components/SearchField";
@@ -86,106 +93,107 @@ const ProductPage: FC = () => {
       return { ...p, category: event.target.value };
     });
   };
-  const onSubmitHandler = (values: any) => {
-    let formData = new FormData();
-    formData.append("productName", values.title);
-    formData.append("productCategory", values.category);
-    formData.append("unitOfMeasure", values.unit);
-    formData.append("productPrice", values.price);
-    formData.append("image", values.image.img);
-    const dispatch = useDispatch();
-    useEffect(() => {
-      axios
-        .get("http://localhost:5500/category/categories")
-        .then((res) => dispatch(set_categories(res.data)))
-        .catch((err) => {
-          alert(err.response.message);
-        });
-      axios
-        .get("http://localhost:5500/product/products")
-        .then((res) => dispatch(set_products(res.data)))
-        .catch((err) => {
-          alert(err.response.message);
-        });
-      axios
-        .get("http://localhost:5500/unit/units")
-        .then((res) => dispatch(set_units(res.data)))
-        .catch((err) => {
-          alert(err.response.message);
-        });
-    }, [dispatch]);
-    if (submitAction === "add") {
-      axios
-        .post("http://localhost:5500/product/new", formData)
-        .then((res) => {
-          snack.onResponse({
-            message: "Product "+ res.data.id+" have been Created",
-            status: res.status,
-          });
-          dispatch(
-            addProduct({
-              id: res.data.id,
-              title: values.title,
-              price: values.price,
-              category: { categoryName: values.category } as Category,
-              media: values.image.preview,
-              unitOfMeasure: unitOfMeasures.find(
-                (p) => p.unitOfMeasureName === values.unit
-              ) as UnitOfMeasure,
-            } as Product)
-          );
-        })
-        .catch((err) => {
-          snack.onResponse({
-            message: err.response.data.message,
-            status: err.response.status,
-          });
-        });
-    } else if (submitAction === "update") {
-      axios
-        .post("http://localhost:5500/product/update/" + values.id, formData)
-        .then((res) => {
-          snack.onResponse({
-            message: res.data.message,
-            status: res.status,
-          });
-          dispatch(
-            updateProduct(values.id, {
-              id: values.id,
-              title: values.title,
-              price: values.price,
-              category: { categoryName: values.category } as Category,
-              media: values.image.preview,
-              unitOfMeasure: unitOfMeasures.find(
-                (p) => p.unitOfMeasureName === values.unit
-              ) as UnitOfMeasure,
-            } as Product)
-          );
-        })
-        .catch((err) => {
-          snack.onResponse({
-            message: err.response.data.message,
-            status: err.response.status,
-          });
-        });
-    } else if (submitAction === "delete") {
-      axios
-        .delete("http://localhost:5500/product/delete/" + values.id)
-        .then((res) => {
-          snack.onResponse({
-            message: res.data.message,
-            status: res.status,
-          });
-          dispatch(removeProduct(values.id));
-        })
-        .catch((err) => {
-          snack.onResponse({
-            message: err.response.data.message,
-            status: err.response.status,
-          });
-        });
-    }
-  };
+  const onSubmitHandler = (values: any) => {};
+  // const onSubmitHandler = (values: any) => {
+  //   let formData = new FormData();
+  //   formData.append("productName", values.title);
+  //   formData.append("productCategory", values.category);
+  //   formData.append("unitOfMeasure", values.unit);
+  //   formData.append("productPrice", values.price);
+  //   formData.append("image", values.image.img);
+  //   // const dispatch = useDispatch();
+  //   useEffect(() => {
+  //     axios
+  //       .get("http://localhost:5500/category/categories")
+  //       .then((res) => dispatch(set_categories(res.data)))
+  //       .catch((err) => {
+  //         alert(err.response.message);
+  //       });
+  //     axios
+  //       .get("http://localhost:5500/product/products")
+  //       .then((res) => dispatch(set_products(res.data)))
+  //       .catch((err) => {
+  //         alert(err.response.message);
+  //       });
+  //     axios
+  //       .get("http://localhost:5500/unit/units")
+  //       .then((res) => dispatch(set_units(res.data)))
+  //       .catch((err) => {
+  //         alert(err.response.message);
+  //       });
+  //   }, [dispatch]);
+  //   if (submitAction === "add") {
+  //     axios
+  //       .post("http://localhost:5500/product/new", formData)
+  //       .then((res) => {
+  //         snack.onResponse({
+  //           message: "Product " + res.data.id + " have been Created",
+  //           status: res.status,
+  //         });
+  //         dispatch(
+  //           addProduct({
+  //             id: res.data.id,
+  //             title: values.title,
+  //             price: values.price,
+  //             category: { categoryName: values.category } as Category,
+  //             media: values.image.preview,
+  //             unitOfMeasure: unitOfMeasures.find(
+  //               (p) => p.unitOfMeasureName === values.unit
+  //             ) as UnitOfMeasure,
+  //           } as Product)
+  //         );
+  //       })
+  //       .catch((err) => {
+  //         snack.onResponse({
+  //           message: err.response.data.message,
+  //           status: err.response.status,
+  //         });
+  //       });
+  //   } else if (submitAction === "update") {
+  //     axios
+  //       .post("http://localhost:5500/product/update/" + values.id, formData)
+  //       .then((res) => {
+  //         snack.onResponse({
+  //           message: res.data.message,
+  //           status: res.status,
+  //         });
+  //         dispatch(
+  //           updateProduct(values.id, {
+  //             id: values.id,
+  //             title: values.title,
+  //             price: values.price,
+  //             category: { categoryName: values.category } as Category,
+  //             media: values.image.preview,
+  //             unitOfMeasure: unitOfMeasures.find(
+  //               (p) => p.unitOfMeasureName === values.unit
+  //             ) as UnitOfMeasure,
+  //           } as Product)
+  //         );
+  //       })
+  //       .catch((err) => {
+  //         snack.onResponse({
+  //           message: err.response.data.message,
+  //           status: err.response.status,
+  //         });
+  //       });
+  //   } else if (submitAction === "delete") {
+  //     axios
+  //       .delete("http://localhost:5500/product/delete/" + values.id)
+  //       .then((res) => {
+  //         snack.onResponse({
+  //           message: res.data.message,
+  //           status: res.status,
+  //         });
+  //         dispatch(removeProduct(values.id));
+  //       })
+  //       .catch((err) => {
+  //         snack.onResponse({
+  //           message: err.response.data.message,
+  //           status: err.response.status,
+  //         });
+  //       });
+  //   }
+  // };
   const onChangeUnitOfMeasureFilterHandler = (
     event: ChangeEvent<HTMLSelectElement>
   ) => {
@@ -201,7 +209,7 @@ const ProductPage: FC = () => {
     >
       <div className={style.list}>
         <div className={style.filterControls}>
-          <h1 style={{ color: theme.palette.textPrimary }}>EMMARKET</h1>
+          <h1 style={{ color: theme.palette.textPrimary }}>SUPPLYSYNC</h1>
           <SearchField className={style.searchBar} onChange={searchHandler} />
           <Select
             onChange={onChangeCategoryFilterHandler}

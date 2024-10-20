@@ -44,7 +44,7 @@ const Card: FC<props> = ({
       }}
     >
       <div className={style.cardMedia}>
-        <img src={media} alt={title} />
+        <img src="/stock/dogstock.png" alt={title} />
         <Button
           variant="primary"
           size="large"
