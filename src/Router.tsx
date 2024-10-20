@@ -10,6 +10,7 @@ import AuthenticationPage from "./Pages/AuthenticationPage";
 import Layout from "./Layout";
 import Dashboard from "./Pages/Dashboard";
 import Logout from "./Pages/Logout";
+import SalesPage from "./Pages/SalesPage";
 
 const Router: FC = () => {
   return (
@@ -25,12 +26,23 @@ const Router: FC = () => {
             </Guard>
           }
         ></Route>
+
         <Route
           path="/product"
           element={
             <Guard>
               <Layout>
                 <ProductPage />
+              </Layout>
+            </Guard>
+          }
+        ></Route>
+        <Route
+          path="/sales"
+          element={
+            <Guard>
+              <Layout>
+                <SalesPage />
               </Layout>
             </Guard>
           }

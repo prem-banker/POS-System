@@ -13,7 +13,7 @@ const Guard: FC<PropsWithChildren> = ({ children }) => {
   const [cookies] = useCookies();
   const auth = cookies.auth;
   if (!auth) {
-    return <Navigate to={'/auth'} />
+    return <Navigate to={"/auth"} />;
   }
   return <>{children}</>;
 };

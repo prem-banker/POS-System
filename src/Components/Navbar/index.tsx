@@ -3,6 +3,7 @@ import useTheme from "../../context/Theme/useTheme";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faBarChart,
   faCube,
   faGears,
   faHome,
@@ -22,23 +23,34 @@ const Navbar: FC = () => {
       <Link to={"/"} title="home">
         <FontAwesomeIcon className={style.link} icon={faHome} color="white" />
       </Link>
+      <Link to={"/sales"} title="sales">
+        <FontAwesomeIcon
+          className={style.link}
+          icon={faBarChart}
+          color="white"
+        />
+      </Link>
       <Link to={"/auth"} title="login">
         <FontAwesomeIcon className={style.link} icon={faUser} color="white" />
       </Link>
-      <Link to={"/category"}  title="category">
+      <Link to={"/category"} title="category">
         <FontAwesomeIcon className={style.link} icon={faTag} color="white" />
       </Link>
-      <Link to={"/unit-measure"}  title="unit of measure">
+      <Link to={"/unit-measure"} title="unit of measure">
         <FontAwesomeIcon className={style.link} icon={faRuler} color="white" />
       </Link>
-      <Link to={"/product"}  title="product">
+      <Link to={"/product"} title="product">
         <FontAwesomeIcon className={style.link} icon={faCube} color="white" />
       </Link>
       <Link to={"/dashboard"} title="dashboard">
         <FontAwesomeIcon className={style.link} icon={faGears} color="white" />
       </Link>
       <Link to={"/logout"} title="logout">
-        <FontAwesomeIcon className={style.link} icon={faSignOut} color="white" />
+        <FontAwesomeIcon
+          className={style.link}
+          icon={faSignOut}
+          color="white"
+        />
       </Link>
     </header>
   );
