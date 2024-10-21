@@ -21,7 +21,7 @@ const Router: FC = () => {
           element={
             <Guard>
               <Layout>
-                <PosPage />
+                <SalesPage />
               </Layout>
             </Guard>
           }
