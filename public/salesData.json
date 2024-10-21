@@ -1,0 +1,802 @@
+[
+    {
+        "_id": "2024-05-01",
+        "totalSales": 75140.53,
+        "totalQuantity": 446
+    },
+    {
+        "_id": "2024-05-02",
+        "totalSales": 48122.01,
+        "totalQuantity": 149
+    },
+    {
+        "_id": "2024-05-03",
+        "totalSales": 28032.15,
+        "totalQuantity": 105
+    },
+    {
+        "_id": "2024-05-04",
+        "totalSales": 50570.68,
+        "totalQuantity": 240
+    },
+    {
+        "_id": "2024-05-05",
+        "totalSales": 43706.7,
+        "totalQuantity": 230
+    },
+    {
+        "_id": "2024-05-06",
+        "totalSales": 56831.36,
+        "totalQuantity": 168
+    },
+    {
+        "_id": "2024-05-07",
+        "totalSales": 21275.63,
+        "totalQuantity": 168
+    },
+    {
+        "_id": "2024-05-08",
+        "totalSales": 46359.38,
+        "totalQuantity": 207
+    },
+    {
+        "_id": "2024-05-09",
+        "totalSales": 39072.33,
+        "totalQuantity": 179
+    },
+    {
+        "_id": "2024-05-10",
+        "totalSales": 34148.8,
+        "totalQuantity": 321
+    },
+    {
+        "_id": "2024-05-11",
+        "totalSales": 43422.08,
+        "totalQuantity": 195
+    },
+    {
+        "_id": "2024-05-12",
+        "totalSales": 42297.19,
+        "totalQuantity": 183
+    },
+    {
+        "_id": "2024-05-13",
+        "totalSales": 29700.6,
+        "totalQuantity": 182
+    },
+    {
+        "_id": "2024-05-14",
+        "totalSales": 44871.05,
+        "totalQuantity": 151
+    },
+    {
+        "_id": "2024-05-15",
+        "totalSales": 32414.61,
+        "totalQuantity": 156
+    },
+    {
+        "_id": "2024-05-16",
+        "totalSales": 31957.32,
+        "totalQuantity": 210
+    },
+    {
+        "_id": "2024-05-17",
+        "totalSales": 21328.7,
+        "totalQuantity": 168
+    },
+    {
+        "_id": "2024-05-18",
+        "totalSales": 58774.29,
+        "totalQuantity": 232
+    },
+    {
+        "_id": "2024-05-19",
+        "totalSales": 41688.14,
+        "totalQuantity": 171
+    },
+    {
+        "_id": "2024-05-20",
+        "totalSales": 33320.09,
+        "totalQuantity": 157
+    },
+    {
+        "_id": "2024-05-21",
+        "totalSales": 18055.54,
+        "totalQuantity": 101
+    },
+    {
+        "_id": "2024-05-22",
+        "totalSales": 24303.79,
+        "totalQuantity": 55
+    },
+    {
+        "_id": "2024-05-23",
+        "totalSales": 38054.59,
+        "totalQuantity": 111
+    },
+    {
+        "_id": "2024-05-24",
+        "totalSales": 46077.37,
+        "totalQuantity": 151
+    },
+    {
+        "_id": "2024-05-25",
+        "totalSales": 40567.96,
+        "totalQuantity": 220
+    },
+    {
+        "_id": "2024-05-26",
+        "totalSales": 32795.52,
+        "totalQuantity": 185
+    },
+    {
+        "_id": "2024-05-27",
+        "totalSales": 34022.03,
+        "totalQuantity": 154
+    },
+    {
+        "_id": "2024-05-28",
+        "totalSales": 36170.83,
+        "totalQuantity": 173
+    },
+    {
+        "_id": "2024-05-29",
+        "totalSales": 32437.9,
+        "totalQuantity": 80
+    },
+    {
+        "_id": "2024-05-30",
+        "totalSales": 36298.66,
+        "totalQuantity": 82
+    },
+    {
+        "_id": "2024-05-31",
+        "totalSales": 37392.93,
+        "totalQuantity": 202
+    },
+    {
+        "_id": "2024-06-01",
+        "totalSales": 51725.93,
+        "totalQuantity": 355
+    },
+    {
+        "_id": "2024-06-02",
+        "totalSales": 61579.94,
+        "totalQuantity": 187
+    },
+    {
+        "_id": "2024-06-03",
+        "totalSales": 62790.94,
+        "totalQuantity": 550
+    },
+    {
+        "_id": "2024-06-04",
+        "totalSales": 37071.49,
+        "totalQuantity": 233
+    },
+    {
+        "_id": "2024-06-05",
+        "totalSales": 40222.33,
+        "totalQuantity": 167
+    },
+    {
+        "_id": "2024-06-06",
+        "totalSales": 39470.55,
+        "totalQuantity": 125
+    },
+    {
+        "_id": "2024-06-07",
+        "totalSales": 45816.99,
+        "totalQuantity": 171
+    },
+    {
+        "_id": "2024-06-08",
+        "totalSales": 57264.45,
+        "totalQuantity": 178
+    },
+    {
+        "_id": "2024-06-09",
+        "totalSales": 47140.15,
+        "totalQuantity": 161
+    },
+    {
+        "_id": "2024-06-10",
+        "totalSales": 31352.5,
+        "totalQuantity": 140
+    },
+    {
+        "_id": "2024-06-11",
+        "totalSales": 32342.13,
+        "totalQuantity": 195
+    },
+    {
+        "_id": "2024-06-12",
+        "totalSales": 36730.96,
+        "totalQuantity": 258
+    },
+    {
+        "_id": "2024-06-13",
+        "totalSales": 37142.9,
+        "totalQuantity": 108
+    },
+    {
+        "_id": "2024-06-14",
+        "totalSales": 31787.23,
+        "totalQuantity": 194
+    },
+    {
+        "_id": "2024-06-15",
+        "totalSales": 72038.88,
+        "totalQuantity": 410
+    },
+    {
+        "_id": "2024-06-16",
+        "totalSales": 32872.3,
+        "totalQuantity": 253
+    },
+    {
+        "_id": "2024-06-17",
+        "totalSales": 48636.25,
+        "totalQuantity": 248
+    },
+    {
+        "_id": "2024-06-18",
+        "totalSales": 20756.6,
+        "totalQuantity": 63
+    },
+    {
+        "_id": "2024-06-19",
+        "totalSales": 25255.45,
+        "totalQuantity": 154
+    },
+    {
+        "_id": "2024-06-20",
+        "totalSales": 18934.55,
+        "totalQuantity": 131
+    },
+    {
+        "_id": "2024-06-21",
+        "totalSales": 37984.17,
+        "totalQuantity": 320
+    },
+    {
+        "_id": "2024-06-22",
+        "totalSales": 65615.29,
+        "totalQuantity": 351
+    },
+    {
+        "_id": "2024-06-23",
+        "totalSales": 60721.78,
+        "totalQuantity": 251
+    },
+    {
+        "_id": "2024-06-24",
+        "totalSales": 15570,
+        "totalQuantity": 142
+    },
+    {
+        "_id": "2024-06-25",
+        "totalSales": 29170.46,
+        "totalQuantity": 139
+    },
+    {
+        "_id": "2024-06-26",
+        "totalSales": 33507.56,
+        "totalQuantity": 214
+    },
+    {
+        "_id": "2024-06-27",
+        "totalSales": 16421.75,
+        "totalQuantity": 67
+    },
+    {
+        "_id": "2024-06-28",
+        "totalSales": 59791.08,
+        "totalQuantity": 294
+    },
+    {
+        "_id": "2024-06-29",
+        "totalSales": 47382.17,
+        "totalQuantity": 260
+    },
+    {
+        "_id": "2024-06-30",
+        "totalSales": 42894.97,
+        "totalQuantity": 147
+    },
+    {
+        "_id": "2024-07-01",
+        "totalSales": 26308.42,
+        "totalQuantity": 140
+    },
+    {
+        "_id": "2024-07-02",
+        "totalSales": 29737.73,
+        "totalQuantity": 178
+    },
+    {
+        "_id": "2024-07-03",
+        "totalSales": 23525.75,
+        "totalQuantity": 181
+    },
+    {
+        "_id": "2024-07-04",
+        "totalSales": 47337.34,
+        "totalQuantity": 310
+    },
+    {
+        "_id": "2024-07-05",
+        "totalSales": 31551.72,
+        "totalQuantity": 204
+    },
+    {
+        "_id": "2024-07-06",
+        "totalSales": 72737.83,
+        "totalQuantity": 306
+    },
+    {
+        "_id": "2024-07-07",
+        "totalSales": 56700.85,
+        "totalQuantity": 300
+    },
+    {
+        "_id": "2024-07-08",
+        "totalSales": 37157.7,
+        "totalQuantity": 289
+    },
+    {
+        "_id": "2024-07-09",
+        "totalSales": 33058.34,
+        "totalQuantity": 152
+    },
+    {
+        "_id": "2024-07-10",
+        "totalSales": 36492.94,
+        "totalQuantity": 210
+    },
+    {
+        "_id": "2024-07-11",
+        "totalSales": 41549.03,
+        "totalQuantity": 152
+    },
+    {
+        "_id": "2024-07-12",
+        "totalSales": 23950.73,
+        "totalQuantity": 83
+    },
+    {
+        "_id": "2024-07-13",
+        "totalSales": 68478.62,
+        "totalQuantity": 253
+    },
+    {
+        "_id": "2024-07-14",
+        "totalSales": 45030.07,
+        "totalQuantity": 311
+    },
+    {
+        "_id": "2024-07-15",
+        "totalSales": 40584.43,
+        "totalQuantity": 221
+    },
+    {
+        "_id": "2024-07-16",
+        "totalSales": 30696.34,
+        "totalQuantity": 174
+    },
+    {
+        "_id": "2024-07-17",
+        "totalSales": 51571.01,
+        "totalQuantity": 285
+    },
+    {
+        "_id": "2024-07-18",
+        "totalSales": 29773.67,
+        "totalQuantity": 175
+    },
+    {
+        "_id": "2024-07-19",
+        "totalSales": 43059.34,
+        "totalQuantity": 158
+    },
+    {
+        "_id": "2024-07-20",
+        "totalSales": 77440.55,
+        "totalQuantity": 265
+    },
+    {
+        "_id": "2024-07-21",
+        "totalSales": 49498.24,
+        "totalQuantity": 133
+    },
+    {
+        "_id": "2024-07-22",
+        "totalSales": 47916.67,
+        "totalQuantity": 139
+    },
+    {
+        "_id": "2024-07-23",
+        "totalSales": 25994.97,
+        "totalQuantity": 131
+    },
+    {
+        "_id": "2024-07-24",
+        "totalSales": 16821.26,
+        "totalQuantity": 138
+    },
+    {
+        "_id": "2024-07-25",
+        "totalSales": 32780.55,
+        "totalQuantity": 85
+    },
+    {
+        "_id": "2024-07-26",
+        "totalSales": 44032.909999999996,
+        "totalQuantity": 243
+    },
+    {
+        "_id": "2024-07-27",
+        "totalSales": 72182.21,
+        "totalQuantity": 225
+    },
+    {
+        "_id": "2024-07-28",
+        "totalSales": 76575.53,
+        "totalQuantity": 448
+    },
+    {
+        "_id": "2024-07-29",
+        "totalSales": 43919.24,
+        "totalQuantity": 191
+    },
+    {
+        "_id": "2024-07-30",
+        "totalSales": 31776.3,
+        "totalQuantity": 212
+    },
+    {
+        "_id": "2024-07-31",
+        "totalSales": 24777.26,
+        "totalQuantity": 183
+    },
+    {
+        "_id": "2024-08-01",
+        "totalSales": 42917.23,
+        "totalQuantity": 168
+    },
+    {
+        "_id": "2024-08-02",
+        "totalSales": 50012.56,
+        "totalQuantity": 286
+    },
+    {
+        "_id": "2024-08-03",
+        "totalSales": 77464.85,
+        "totalQuantity": 337
+    },
+    {
+        "_id": "2024-08-04",
+        "totalSales": 77134.07,
+        "totalQuantity": 356
+    },
+    {
+        "_id": "2024-08-05",
+        "totalSales": 42220.2,
+        "totalQuantity": 145
+    },
+    {
+        "_id": "2024-08-06",
+        "totalSales": 29524.67,
+        "totalQuantity": 121
+    },
+    {
+        "_id": "2024-08-07",
+        "totalSales": 45619.27,
+        "totalQuantity": 274
+    },
+    {
+        "_id": "2024-08-08",
+        "totalSales": 29622.1,
+        "totalQuantity": 110
+    },
+    {
+        "_id": "2024-08-09",
+        "totalSales": 43952.25,
+        "totalQuantity": 179
+    },
+    {
+        "_id": "2024-08-10",
+        "totalSales": 94760.01,
+        "totalQuantity": 465
+    },
+    {
+        "_id": "2024-08-11",
+        "totalSales": 38706.03,
+        "totalQuantity": 170
+    },
+    {
+        "_id": "2024-08-12",
+        "totalSales": 26819.87,
+        "totalQuantity": 186
+    },
+    {
+        "_id": "2024-08-13",
+        "totalSales": 22283.11,
+        "totalQuantity": 144
+    },
+    {
+        "_id": "2024-08-14",
+        "totalSales": 66553.27,
+        "totalQuantity": 332
+    },
+    {
+        "_id": "2024-08-15",
+        "totalSales": 92378.46,
+        "totalQuantity": 427
+    },
+    {
+        "_id": "2024-08-16",
+        "totalSales": 43683.16,
+        "totalQuantity": 237
+    },
+    {
+        "_id": "2024-08-17",
+        "totalSales": 40460.49,
+        "totalQuantity": 249
+    },
+    {
+        "_id": "2024-08-18",
+        "totalSales": 47944.6,
+        "totalQuantity": 186
+    },
+    {
+        "_id": "2024-08-19",
+        "totalSales": 63229.45,
+        "totalQuantity": 187
+    },
+    {
+        "_id": "2024-08-20",
+        "totalSales": 41444.88,
+        "totalQuantity": 147
+    },
+    {
+        "_id": "2024-08-21",
+        "totalSales": 24066.77,
+        "totalQuantity": 120
+    },
+    {
+        "_id": "2024-08-22",
+        "totalSales": 27123.96,
+        "totalQuantity": 139
+    },
+    {
+        "_id": "2024-08-23",
+        "totalSales": 50584.68,
+        "totalQuantity": 317
+    },
+    {
+        "_id": "2024-08-24",
+        "totalSales": 43794.61,
+        "totalQuantity": 208
+    },
+    {
+        "_id": "2024-08-25",
+        "totalSales": 61877.59,
+        "totalQuantity": 188
+    },
+    {
+        "_id": "2024-08-26",
+        "totalSales": 35616.45,
+        "totalQuantity": 153
+    },
+    {
+        "_id": "2024-08-27",
+        "totalSales": 50824.58,
+        "totalQuantity": 360
+    },
+    {
+        "_id": "2024-08-28",
+        "totalSales": 15031.42,
+        "totalQuantity": 111
+    },
+    {
+        "_id": "2024-08-29",
+        "totalSales": 24849.8,
+        "totalQuantity": 169
+    },
+    {
+        "_id": "2024-08-30",
+        "totalSales": 41008.87,
+        "totalQuantity": 214
+    },
+    {
+        "_id": "2024-08-31",
+        "totalSales": 58992.04,
+        "totalQuantity": 248
+    },
+    {
+        "_id": "2024-09-01",
+        "totalSales": 82724.72,
+        "totalQuantity": 347
+    },
+    {
+        "_id": "2024-09-02",
+        "totalSales": 43287.56,
+        "totalQuantity": 235
+    },
+    {
+        "_id": "2024-09-03",
+        "totalSales": 35490.56,
+        "totalQuantity": 189
+    },
+    {
+        "_id": "2024-09-04",
+        "totalSales": 28246.3,
+        "totalQuantity": 89
+    },
+    {
+        "_id": "2024-09-05",
+        "totalSales": 37672.85,
+        "totalQuantity": 214
+    },
+    {
+        "_id": "2024-09-06",
+        "totalSales": 50387.61,
+        "totalQuantity": 345
+    },
+    {
+        "_id": "2024-09-07",
+        "totalSales": 63039.75,
+        "totalQuantity": 295
+    },
+    {
+        "_id": "2024-09-08",
+        "totalSales": 53187.74,
+        "totalQuantity": 303
+    },
+    {
+        "_id": "2024-09-09",
+        "totalSales": 46274.07,
+        "totalQuantity": 119
+    },
+    {
+        "_id": "2024-09-10",
+        "totalSales": 18363.75,
+        "totalQuantity": 66
+    },
+    {
+        "_id": "2024-09-11",
+        "totalSales": 28788.38,
+        "totalQuantity": 157
+    },
+    {
+        "_id": "2024-09-12",
+        "totalSales": 29810.67,
+        "totalQuantity": 201
+    },
+    {
+        "_id": "2024-09-13",
+        "totalSales": 43579.05,
+        "totalQuantity": 273
+    },
+    {
+        "_id": "2024-09-14",
+        "totalSales": 53388.65,
+        "totalQuantity": 299
+    },
+    {
+        "_id": "2024-09-15",
+        "totalSales": 42721.73,
+        "totalQuantity": 115
+    },
+    {
+        "_id": "2024-09-16",
+        "totalSales": 35520.72,
+        "totalQuantity": 165
+    },
+    {
+        "_id": "2024-09-17",
+        "totalSales": 41970.96,
+        "totalQuantity": 382
+    },
+    {
+        "_id": "2024-09-18",
+        "totalSales": 53027.04,
+        "totalQuantity": 387
+    },
+    {
+        "_id": "2024-09-19",
+        "totalSales": 33965.02,
+        "totalQuantity": 162
+    },
+    {
+        "_id": "2024-09-20",
+        "totalSales": 41977.72,
+        "totalQuantity": 192
+    },
+    {
+        "_id": "2024-09-21",
+        "totalSales": 61656.78,
+        "totalQuantity": 348
+    },
+    {
+        "_id": "2024-09-22",
+        "totalSales": 51476.17,
+        "totalQuantity": 251
+    },
+    {
+        "_id": "2024-09-23",
+        "totalSales": 27927.95,
+        "totalQuantity": 141
+    },
+    {
+        "_id": "2024-09-24",
+        "totalSales": 32272.77,
+        "totalQuantity": 79
+    },
+    {
+        "_id": "2024-09-25",
+        "totalSales": 35587.5,
+        "totalQuantity": 242
+    },
+    {
+        "_id": "2024-09-26",
+        "totalSales": 41904.21,
+        "totalQuantity": 223
+    },
+    {
+        "_id": "2024-09-27",
+        "totalSales": 49872.35,
+        "totalQuantity": 293
+    },
+    {
+        "_id": "2024-09-28",
+        "totalSales": 45034.94,
+        "totalQuantity": 324
+    },
+    {
+        "_id": "2024-09-29",
+        "totalSales": 47701.98,
+        "totalQuantity": 231
+    },
+    {
+        "_id": "2024-09-30",
+        "totalSales": 45051.74,
+        "totalQuantity": 234
+    },
+    {
+        "_id": "2024-10-01",
+        "totalSales": 36622.07,
+        "totalQuantity": 181
+    },
+    {
+        "_id": "2024-10-02",
+        "totalSales": 50490.34,
+        "totalQuantity": 301
+    },
+    {
+        "_id": "2024-10-03",
+        "totalSales": 49351.09,
+        "totalQuantity": 293
+    },
+    {
+        "_id": "2024-10-04",
+        "totalSales": 71004.43,
+        "totalQuantity": 261
+    },
+    {
+        "_id": "2024-10-05",
+        "totalSales": 62213.78,
+        "totalQuantity": 340
+    },
+    {
+        "_id": "2024-10-06",
+        "totalSales": 68198.3,
+        "totalQuantity": 336
+    },
+    {
+        "_id": "2024-10-07",
+        "totalSales": 78134.28,
+        "totalQuantity": 312
+    }
+]

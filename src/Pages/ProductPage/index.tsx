@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { ChangeEvent, FC, useEffect, useState } from "react";
 import style from "./style.module.css";
 import useTheme from "../../context/Theme/useTheme";

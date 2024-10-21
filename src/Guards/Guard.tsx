@@ -10,11 +10,11 @@ import { Navigate } from "react-router-dom";
  */
 const Guard: FC<PropsWithChildren> = ({ children }) => {
   // some logic to handle the validation
-  const [cookies] = useCookies();
-  const auth = cookies.auth;
-  if (!auth) {
-    return <Navigate to={"/auth"} />;
-  }
+  // const [cookies] = useCookies();
+  // const auth = cookies.auth;
+  // if (!auth) {
+  //   return <Navigate to={"/auth"} />;
+  // }
   return <>{children}</>;
 };
 
