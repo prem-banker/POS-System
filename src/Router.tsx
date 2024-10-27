@@ -11,6 +11,7 @@ import Layout from "./Layout";
 import Dashboard from "./Pages/Dashboard";
 import Logout from "./Pages/Logout";
 import SalesPage from "./Pages/SalesPage";
+import InventoryPage from "./Pages/InventoryPage";
 
 const Router: FC = () => {
   return (
@@ -21,7 +22,7 @@ const Router: FC = () => {
           element={
             <Guard>
               <Layout>
-                <SalesPage />
+                <PosPage />
               </Layout>
             </Guard>
           }
@@ -53,6 +54,17 @@ const Router: FC = () => {
             <Guard>
               <Layout>
                 <CategoryPage />
+              </Layout>
+            </Guard>
+          }
+        ></Route>
+
+        <Route
+          path="/inventory"
+          element={
+            <Guard>
+              <Layout>
+                <InventoryPage />
               </Layout>
             </Guard>
           }
