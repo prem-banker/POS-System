@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import { Bar, Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -23,6 +22,7 @@ import {
   Typography,
 } from "@mui/material";
 import { format } from "date-fns";
+import axios from "axios";
 
 // Register Chart.js components
 ChartJS.register(
@@ -40,7 +40,7 @@ ChartJS.register(
 const darkTheme = {
   backgroundColor: "#1c1c1c",
   color: "#fff",
-  buttonColor: "#ff0000",
+  buttonColor: "#b00020",
 };
 
 // Main component
@@ -50,33 +50,31 @@ const SalesPage: FC = () => {
   const [salesData, setSalesData] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch sales data from local JSON file
-  const fetchLocalSalesData = async () => {
+  // Fetch sales data
+  const fetchSalesData = async () => {
+    if (!fromDate || !toDate) {
+      setError("Please select both 'From' and 'To' dates.");
+      return;
+    }
+    setError(null);
+
     try {
-      const response = await fetch("/salesData.json"); // Adjust path as needed
-      const data = await response.json();
-      setSalesData(data);
+      const response = await axios.get(
+        `http://localhost:5500/sales/sales/daywise?from=${format(
+          fromDate,
+          "yyyy-MM-dd"
+        )}&to=${format(toDate, "yyyy-MM-dd")}`
+      );
+      setSalesData(response.data);
     } catch (err) {
-      setError("Failed to fetch sales data from local file.");
+      setError("Failed to fetch sales data. Please try again.");
     }
   };
 
-  // Fetch data on component mount
-  useEffect(() => {
-    fetchLocalSalesData();
-  }, []);
-
-  // Filter sales data based on selected date range
-  const filteredSalesData = salesData.filter((item) => {
-    if (!fromDate || !toDate) return true;
-    const saleDate = new Date(item._id);
-    return saleDate >= fromDate && saleDate <= toDate;
-  });
-
   // Prepare data for bar and line charts
-  const dates = filteredSalesData.map((item) => item._id);
-  const totalQuantities = filteredSalesData.map((item) => item.totalQuantity);
-  const totalSales = filteredSalesData.map((item) => item.totalSales);
+  const dates = salesData.map((item) => item._id);
+  const totalQuantities = salesData.map((item) => item.totalQuantity);
+  const totalSales = salesData.map((item) => item.totalSales);
 
   return (
     <Container
@@ -116,6 +114,12 @@ const SalesPage: FC = () => {
                     "& .MuiOutlinedInput-notchedOutline": {
                       borderColor: "#fff", // Set border color to white
                     },
+                    "&:hover .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "#fff", // Set border color to white on hover
+                    },
+                    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "#ff0000", // Set border color to red when focused
+                    },
                   },
                 },
               }}
@@ -142,11 +146,28 @@ const SalesPage: FC = () => {
                     "& .MuiOutlinedInput-notchedOutline": {
                       borderColor: "#fff", // Set border color to white
                     },
+                    "&:hover .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "#fff", // Set border color to white on hover
+                    },
+                    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "#ff0000", // Set border color to red when focused
+                    },
                   },
                 },
               }}
             />
           </LocalizationProvider>
+        </Grid>
+
+        <Grid item xs={12}>
+          <Button
+            variant="contained"
+            fullWidth
+            style={{ backgroundColor: darkTheme.buttonColor, color: "#fff" }}
+            onClick={fetchSalesData}
+          >
+            Fetch Sales Data
+          </Button>
         </Grid>
       </Grid>
 
@@ -161,11 +182,11 @@ const SalesPage: FC = () => {
         </Typography>
       )}
 
-      {filteredSalesData.length > 0 && (
+      {salesData.length > 0 && (
         <>
           <Box mt={5}>
             <Typography variant="h6" align="center" gutterBottom>
-              Sales Quantities (Bar Chart)
+              Sales Quantities
             </Typography>
             <Bar
               data={{
@@ -195,7 +216,7 @@ const SalesPage: FC = () => {
 
           <Box mt={5}>
             <Typography variant="h6" align="center" gutterBottom>
-              Total Sales (Line Chart)
+              Total Sales (in ₹)
             </Typography>
             <Line
               data={{

@@ -1,17 +1,19 @@
 import { FC, useState } from "react";
 import {
-  Box,
   Button,
   Container,
   Grid,
   MenuItem,
   Select,
   SelectChangeEvent,
-  TextField,
   Typography,
 } from "@mui/material";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
+import axios from "axios";
+import { format } from "date-fns";
+import { saveAs } from "file-saver";
+import Papa from "papaparse";
 
 // Theme settings for red color
 const redTheme = {
@@ -25,12 +27,76 @@ const ReportsPage: FC = () => {
   const [reportType, setReportType] = useState<string>("");
   const [fromDate, setFromDate] = useState<Date | null>(null);
   const [toDate, setToDate] = useState<Date | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   // Handle change in report type selection
   const handleReportTypeChange = (event: SelectChangeEvent<string>) => {
     setReportType(event.target.value as string);
     setFromDate(null);
     setToDate(null);
+  };
+
+  // Function to download CSV
+  const downloadCSV = (data: any[], filename: string) => {
+    const csv = Papa.unparse(data);
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    saveAs(blob, filename);
+  };
+
+  // Fetch Sales Report
+  const fetchSalesReport = async () => {
+    if (!fromDate || !toDate) {
+      alert("Please select a date range for Sales report.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        `http://localhost:5500/sales/sales/daywise?from=${format(
+          fromDate,
+          "yyyy-MM-dd"
+        )}&to=${format(toDate, "yyyy-MM-dd")}`
+      );
+      downloadCSV(response.data, "Sales_Report.csv");
+    } catch (error) {
+      console.error("Failed to fetch sales report.", error);
+      alert("Failed to fetch sales report.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Fetch Inventory Report
+  const fetchInventoryReport = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get("http://localhost:5500/inventory");
+      const formattedData = response.data.map((item: any) => ({
+        productId: item.product.id,
+        productName: item.product.productName,
+        productCategory: item.product.productCategory,
+        unitOfMeasure: item.product.unitOfMeasure,
+        productImage: item.product.productImage,
+        productPrice: item.product.productPrice,
+        lastRestocked: item.lastRestocked,
+        stockSize: item.stockSize,
+      }));
+      downloadCSV(formattedData, "Inventory_Report.csv");
+    } catch (error) {
+      console.error("Failed to fetch inventory report.", error);
+      alert("Failed to fetch inventory report.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Handle report download based on report type
+  const handleDownloadReport = () => {
+    if (reportType === "Sales") {
+      fetchSalesReport();
+    } else if (reportType === "Inventory") {
+      fetchInventoryReport();
+    }
   };
 
   return (
@@ -146,6 +212,8 @@ const ReportsPage: FC = () => {
           <Button
             variant="contained"
             fullWidth
+            onClick={handleDownloadReport}
+            disabled={loading}
             sx={{
               backgroundColor: redTheme.buttonColor,
               color: redTheme.color,
@@ -154,7 +222,7 @@ const ReportsPage: FC = () => {
               },
             }}
           >
-            Download {reportType} Report
+            {loading ? "Generating Report..." : `Download ${reportType} Report`}
           </Button>
         </Grid>
       </Grid>
