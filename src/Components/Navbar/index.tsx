@@ -3,10 +3,13 @@ import useTheme from "../../context/Theme/useTheme";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faArrowTrendUp,
   faBarChart,
   faCube,
+  faDownload,
   faGears,
   faHome,
+  faNoteSticky,
   faRuler,
   faSignOut,
   faTag,
@@ -31,6 +34,15 @@ const Navbar: FC = () => {
           color="white"
         />
       </Link>
+
+      <Link to={"/forecast"} title="forecast">
+        <FontAwesomeIcon
+          className={style.link}
+          icon={faArrowTrendUp}
+          color="white"
+        />
+      </Link>
+
       <Link to={"/auth"} title="login">
         <FontAwesomeIcon className={style.link} icon={faUser} color="white" />
       </Link>
@@ -43,6 +55,15 @@ const Navbar: FC = () => {
       <Link to={"/product"} title="product">
         <FontAwesomeIcon className={style.link} icon={faCube} color="white" />
       </Link>
+
+      <Link to={"/reports"} title="reports">
+        <FontAwesomeIcon
+          className={style.link}
+          icon={faDownload}
+          color="white"
+        />
+      </Link>
+
       <Link to={"/dashboard"} title="dashboard">
         <FontAwesomeIcon className={style.link} icon={faGears} color="white" />
       </Link>

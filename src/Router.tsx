@@ -12,6 +12,8 @@ import Dashboard from "./Pages/Dashboard";
 import Logout from "./Pages/Logout";
 import SalesPage from "./Pages/SalesPage";
 import InventoryPage from "./Pages/InventoryPage";
+import ForecastPage from "./Pages/ForecastPage";
+import ReportsPage from "./Pages/ReportsPage";
 
 const Router: FC = () => {
   return (
@@ -34,6 +36,17 @@ const Router: FC = () => {
             <Guard>
               <Layout>
                 <ProductPage />
+              </Layout>
+            </Guard>
+          }
+        ></Route>
+
+        <Route
+          path="/reports"
+          element={
+            <Guard>
+              <Layout>
+                <ReportsPage />
               </Layout>
             </Guard>
           }
@@ -65,6 +78,17 @@ const Router: FC = () => {
             <Guard>
               <Layout>
                 <InventoryPage />
+              </Layout>
+            </Guard>
+          }
+        ></Route>
+
+        <Route
+          path="/forecast"
+          element={
+            <Guard>
+              <Layout>
+                <ForecastPage />
               </Layout>
             </Guard>
           }
