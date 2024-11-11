@@ -14,6 +14,7 @@ import SalesPage from "./Pages/SalesPage";
 import InventoryPage from "./Pages/InventoryPage";
 import ForecastPage from "./Pages/ForecastPage";
 import ReportsPage from "./Pages/ReportsPage";
+import PurchaseOrderPage from "./Pages/PurchaseOrderPage";
 
 const Router: FC = () => {
   return (
@@ -51,6 +52,18 @@ const Router: FC = () => {
             </Guard>
           }
         ></Route>
+
+        <Route
+          path="/purchaseorder"
+          element={
+            <Guard>
+              <Layout>
+                <PurchaseOrderPage />
+              </Layout>
+            </Guard>
+          }
+        ></Route>
+
         <Route
           path="/sales"
           element={

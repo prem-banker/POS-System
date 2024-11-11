@@ -7,6 +7,7 @@ import {
   faBarChart,
   faCube,
   faDownload,
+  faFileInvoice,
   faGears,
   faHome,
   faNoteSticky,
@@ -74,6 +75,15 @@ const Navbar: FC = () => {
           color="white"
         />
       </Link>
+
+      <Link to={"/purchaseorder"} title="purchaseorder">
+        <FontAwesomeIcon
+          className={style.link}
+          icon={faFileInvoice}
+          color="white"
+        />
+      </Link>
+
       <Link to={"/logout"} title="logout">
         <FontAwesomeIcon
           className={style.link}
