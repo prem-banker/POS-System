@@ -14,7 +14,12 @@ import {
   unitOfMeasureSchema,
   unitOfMeasureUpdateSchema,
 } from "../../schema";
-import { addUnit, removeUnit, set_units, updateUnit } from "../../store/Actions";
+import {
+  addUnit,
+  removeUnit,
+  set_units,
+  updateUnit,
+} from "../../store/Actions";
 import SearchField from "../../Components/SearchField";
 import Row from "./components/Row";
 import axios from "axios";
@@ -48,7 +53,7 @@ const UnitOfMeasurePage: FC = () => {
   };
   useEffect(() => {
     axios
-      .get("http://localhost:5500/unit/units")
+      .get("http://35.85.237.96:5500/unit/units")
       .then((res) => dispatch(set_units(res.data)))
       .catch((err) => {
         alert(err.response.message);
@@ -94,7 +99,7 @@ const UnitOfMeasurePage: FC = () => {
           <Formik
             onSubmit={(values) => {
               axios
-                .post("http://localhost:5500/unit/new", {
+                .post("http://35.85.237.96:5500/unit/new", {
                   unitOfMeasureName: values.unitOfMeasureName,
                   baseUnitOfMeasure: values.baseOfUnitOfMeasure,
                   conversionFactor: values.CFB,
@@ -156,7 +161,7 @@ const UnitOfMeasurePage: FC = () => {
             onSubmit={(values) => {
               axios
                 .post(
-                  "http://localhost:5500/unit/update/" + values.selectedUnit,
+                  "http://35.85.237.96:5500/unit/update/" + values.selectedUnit,
                   {
                     unitOfMeasureName: values.unitOfMeasureName,
                     baseUnitOfMeasure: values.baseOfUnitOfMeasure,
@@ -254,7 +259,7 @@ const UnitOfMeasurePage: FC = () => {
             onSubmit={(values) => {
               axios
                 .delete(
-                  "http://localhost:5500/unit/delete/" +
+                  "http://35.85.237.96:5500/unit/delete/" +
                     values.unitOfMeasureName
                 )
                 .then((res) => {

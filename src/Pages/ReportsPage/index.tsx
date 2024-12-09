@@ -52,7 +52,7 @@ const ReportsPage: FC = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:5500/sales/sales/daywise?from=${format(
+        `http://35.85.237.96:5500/sales/sales/daywise?from=${format(
           fromDate,
           "yyyy-MM-dd"
         )}&to=${format(toDate, "yyyy-MM-dd")}`
@@ -70,7 +70,7 @@ const ReportsPage: FC = () => {
   const fetchInventoryReport = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5500/inventory");
+      const response = await axios.get("http://35.85.237.96:5500/inventory");
       const formattedData = response.data.map((item: any) => ({
         productId: item.product.id,
         productName: item.product.productName,

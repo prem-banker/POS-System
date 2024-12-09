@@ -30,7 +30,7 @@ const Dashboard: FC = () => {
     axios.defaults.headers.delete.Authorization =
       "barear " + cookies.auth.token;
 
-    axios.get("http://localhost:5500/cart/carts").then((res) => {
+    axios.get("http://35.85.237.96:5500/cart/carts").then((res) => {
       let carts = res.data.map((c: any) => {
         return {
           cartId: c._id,
@@ -45,7 +45,7 @@ const Dashboard: FC = () => {
       setCarts(carts);
     });
 
-    axios.get("http://localhost:5500/user/users").then((res) => {
+    axios.get("http://35.85.237.96:5500/user/users").then((res) => {
       setUsers(res.data);
     });
   }, [cookies.auth.token]);
@@ -99,7 +99,9 @@ const Dashboard: FC = () => {
                   key={u.username}
                   onClick={(e) => {
                     axios
-                      .delete("http://localhost:5500/user/delete/" + u.username)
+                      .delete(
+                        "http://35.85.237.96:5500/user/delete/" + u.username
+                      )
                       .then((res) => {
                         snack.onResponse({
                           message: res.data.message,
@@ -123,7 +125,7 @@ const Dashboard: FC = () => {
                 validationSchema={userSchema}
                 onSubmit={(values) => {
                   axios
-                    .post("http://localhost:5500/user/create", {
+                    .post("http://35.85.237.96:5500/user/create", {
                       username: values.username,
                       password: values.password,
                       admin: values.isAdmin,

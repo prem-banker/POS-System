@@ -48,11 +48,11 @@ const SingleCart: FC<props> = ({ onClick, orderId, onRemoveOrder }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
   const snackbar = useSnackbar();
-  let cart = (
-    useSelector<RootState>((state) => state.cartsReducer) as Cart[]
-  ).find((p) => p.cartId === orderId) as Cart;
-  if(!cart){
-    cart = {description:'', products:[], tax:0, discount:0, cartId:''}
+  let cart = (useSelector<RootState>(
+    (state) => state.cartsReducer
+  ) as Cart[]).find((p) => p.cartId === orderId) as Cart;
+  if (!cart) {
+    cart = { description: "", products: [], tax: 0, discount: 0, cartId: "" };
   }
 
   let items = cart ? [...cart.products] : [];
@@ -171,7 +171,7 @@ const SingleCart: FC<props> = ({ onClick, orderId, onRemoveOrder }) => {
       <Formik
         onSubmit={() => {
           axios
-            .post("http://localhost:5500/cart/check", {
+            .post("http://35.85.237.96:5500/cart/check", {
               description: cart.description,
               tax: cart.tax,
               discount: cart.discount,
@@ -194,7 +194,7 @@ const SingleCart: FC<props> = ({ onClick, orderId, onRemoveOrder }) => {
               });
             });
         }}
-        initialValues={{ description: cart? cart.description : ""}}
+        initialValues={{ description: cart ? cart.description : "" }}
       >
         <Form
           style={{
@@ -212,7 +212,7 @@ const SingleCart: FC<props> = ({ onClick, orderId, onRemoveOrder }) => {
           />
           <Input
             name="description"
-            value={cart ? cart.description:''}
+            value={cart ? cart.description : ""}
             onChange={descriptionChangeHandler}
             width="100%"
           />

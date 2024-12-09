@@ -31,7 +31,7 @@ const InventoryPage: FC = () => {
   // Fetch product data from local JSON or API endpoint
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://localhost:5500/inventory"); // Adjust the path to your API endpoint
+      const response = await fetch("http://35.85.237.96:5500/inventory"); // Adjust the path to your API endpoint
       const data = await response.json();
       setProducts(data);
     } catch (err) {

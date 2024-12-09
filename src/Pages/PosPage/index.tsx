@@ -23,19 +23,19 @@ const PosPage: FC = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     axios
-      .get("http://localhost:5500/category/categories")
+      .get("http://35.85.237.96:5500/category/categories")
       .then((res) => dispatch(set_categories(res.data)))
       .catch((err) => {
         alert(err.response.message);
       });
     axios
-      .get("http://localhost:5500/product/products")
+      .get("http://35.85.237.96:5500/product/products")
       .then((res) => dispatch(set_products(res.data)))
       .catch((err) => {
         alert(err.response.message);
       });
     axios
-      .get("http://localhost:5500/unit/units")
+      .get("http://35.85.237.96:5500/unit/units")
       .then((res) => dispatch(set_units(res.data)))
       .catch((err) => {
         alert(err.response.message);

@@ -105,19 +105,19 @@ const ProductPage: FC = () => {
   //   // const dispatch = useDispatch();
   //   useEffect(() => {
   //     axios
-  //       .get("http://localhost:5500/category/categories")
+  //       .get("http://35.85.237.96:5500/category/categories")
   //       .then((res) => dispatch(set_categories(res.data)))
   //       .catch((err) => {
   //         alert(err.response.message);
   //       });
   //     axios
-  //       .get("http://localhost:5500/product/products")
+  //       .get("http://35.85.237.96:5500/product/products")
   //       .then((res) => dispatch(set_products(res.data)))
   //       .catch((err) => {
   //         alert(err.response.message);
   //       });
   //     axios
-  //       .get("http://localhost:5500/unit/units")
+  //       .get("http://35.85.237.96:5500/unit/units")
   //       .then((res) => dispatch(set_units(res.data)))
   //       .catch((err) => {
   //         alert(err.response.message);
@@ -125,7 +125,7 @@ const ProductPage: FC = () => {
   //   }, [dispatch]);
   //   if (submitAction === "add") {
   //     axios
-  //       .post("http://localhost:5500/product/new", formData)
+  //       .post("http://35.85.237.96:5500/product/new", formData)
   //       .then((res) => {
   //         snack.onResponse({
   //           message: "Product " + res.data.id + " have been Created",
@@ -152,7 +152,7 @@ const ProductPage: FC = () => {
   //       });
   //   } else if (submitAction === "update") {
   //     axios
-  //       .post("http://localhost:5500/product/update/" + values.id, formData)
+  //       .post("http://35.85.237.96:5500/product/update/" + values.id, formData)
   //       .then((res) => {
   //         snack.onResponse({
   //           message: res.data.message,
@@ -179,7 +179,7 @@ const ProductPage: FC = () => {
   //       });
   //   } else if (submitAction === "delete") {
   //     axios
-  //       .delete("http://localhost:5500/product/delete/" + values.id)
+  //       .delete("http://35.85.237.96:5500/product/delete/" + values.id)
   //       .then((res) => {
   //         snack.onResponse({
   //           message: res.data.message,

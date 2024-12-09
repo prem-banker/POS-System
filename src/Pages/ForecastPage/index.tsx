@@ -50,42 +50,53 @@ const prices: Record<Category, number> = {
   "Pet Medicines": 25,
 };
 
+// Mock JSON data
+const mockData: Record<Category, number[]> = {
+  Others: [576, 623, 601, 571, 619, 657, 641, 608, 658, 693, 678, 644],
+  "Pet Accessories": [15, 14, 15, 17, 16, 17, 18, 16, 17, 18, 17, 18],
+  "Pet Food & Treats": [
+    718,
+    862,
+    767,
+    774,
+    727,
+    855,
+    761,
+    771,
+    721,
+    848,
+    754,
+    764,
+  ],
+  "Pet Grooming": [24, 27, 27, 26, 25, 25, 27, 26, 26, 25, 26, 26],
+  "Pet Medicines": [104, 111, 107, 112, 79, 104, 100, 96, 107, 91, 127, 106],
+};
+
 const redTheme = {
   backgroundColor: "#1c1c1c",
   color: "#fff",
   buttonColor: "#ff0000",
   chartColors: [
-    "rgba(255, 99, 132, 0.6)",
-    "rgba(255, 69, 132, 0.6)",
-    "rgba(255, 39, 132, 0.6)",
-    "rgba(255, 10, 132, 0.6)",
-    "rgba(205, 10, 100, 0.6)",
+    "rgba(75, 192, 192, 0.6)", // Greenish blue
+    "rgba(255, 159, 64, 0.6)", // Orange
+    "rgba(54, 162, 235, 0.6)", // Blue
+    "rgba(153, 102, 255, 0.6)", // Purple
+    "rgba(255, 205, 86, 0.6)", // Yellow
   ],
 };
 
 const ForecastPage: FC = () => {
   const [weeks, setWeeks] = useState<number>(1);
-  const [forecastData, setForecastData] = useState<Record<
-    Category,
-    number[]
-  > | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [forecastData, setForecastData] = useState<Record<Category, number[]>>(
+    mockData
+  );
 
-  // Fetch forecast data based on weeks
-  const fetchForecastData = async () => {
-    try {
-      const response = await fetch(`http://localhost:5000/forecast/${weeks}`);
-      const data = await response.json();
-      setForecastData(data);
-    } catch (err) {
-      setError("Failed to fetch forecast data.");
-    }
-  };
-
-  // Fetch data on weeks change
-  useEffect(() => {
-    fetchForecastData();
-  }, [weeks]);
+  // Filter forecast data based on weeks
+  const filteredData = Object.keys(forecastData).reduce((acc, category) => {
+    const categoryKey = category as Category;
+    acc[categoryKey] = forecastData[categoryKey].slice(0, weeks);
+    return acc;
+  }, {} as Record<Category, number[]>);
 
   // Calculate projected revenue
   const calculateRevenue = (data: Record<Category, number[]>) => {
@@ -97,7 +108,7 @@ const ForecastPage: FC = () => {
     });
   };
 
-  const revenueData = forecastData ? calculateRevenue(forecastData) : [];
+  const revenueData = calculateRevenue(filteredData);
 
   return (
     <Container
@@ -127,100 +138,69 @@ const ForecastPage: FC = () => {
             fullWidth
             sx={{
               "& .MuiInputBase-input": {
-                color: redTheme.color, // Set input text color to white
+                color: redTheme.color,
               },
               "& .MuiInputLabel-root": {
-                color: redTheme.color, // Set label color to white
+                color: redTheme.color,
               },
               "& .MuiOutlinedInput-notchedOutline": {
-                borderColor: redTheme.buttonColor, // Set border color to red
+                borderColor: redTheme.buttonColor,
               },
             }}
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: redTheme.buttonColor,
-              color: redTheme.color,
-              "&:hover": {
-                backgroundColor: "#ff4d4d", // Lighter red on hover
-              },
-            }}
-            onClick={fetchForecastData}
-          >
-            Get Forecast
-          </Button>
-        </Grid>
       </Grid>
 
-      {error && (
-        <Typography
-          variant="body1"
-          align="center"
-          color="error"
-          style={{ marginTop: "1rem" }}
-        >
-          {error}
+      <Box mt={5}>
+        <Typography variant="h6" align="center" gutterBottom>
+          Forecasted Quantities (Bar Chart)
         </Typography>
-      )}
+        <Bar
+          data={{
+            labels: Array.from({ length: weeks }, (_, i) => `Week ${i + 1}`),
+            datasets: Object.keys(filteredData).map((category, index) => ({
+              label: category,
+              data: filteredData[category as Category],
+              backgroundColor:
+                redTheme.chartColors[index % redTheme.chartColors.length],
+            })),
+          }}
+          options={{
+            responsive: true,
+            scales: {
+              x: { ticks: { color: redTheme.color } },
+              y: { ticks: { color: redTheme.color } },
+            },
+          }}
+        />
+      </Box>
 
-      {forecastData && (
-        <>
-          <Box mt={5}>
-            <Typography variant="h6" align="center" gutterBottom>
-              Forecasted Quantities (Bar Chart)
-            </Typography>
-            <Bar
-              data={{
-                labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
-                datasets: Object.keys(forecastData).map((category, index) => ({
-                  label: category,
-                  data: forecastData[category as Category],
-                  backgroundColor:
-                    redTheme.chartColors[index % redTheme.chartColors.length],
-                })),
-              }}
-              options={{
-                responsive: true,
-                scales: {
-                  x: { ticks: { color: redTheme.color } },
-                  y: { ticks: { color: redTheme.color } },
-                },
-              }}
-            />
-          </Box>
-
-          <Box mt={5}>
-            <Typography variant="h6" align="center" gutterBottom>
-              Projected Revenue (Line Chart)
-            </Typography>
-            <Line
-              data={{
-                labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
-                datasets: Object.keys(forecastData).map((category, index) => ({
-                  label: category,
-                  data:
-                    revenueData[Object.keys(forecastData).indexOf(category)],
-                  borderColor:
-                    redTheme.chartColors[index % redTheme.chartColors.length],
-                  backgroundColor:
-                    redTheme.chartColors[index % redTheme.chartColors.length],
-                  fill: true,
-                })),
-              }}
-              options={{
-                responsive: true,
-                scales: {
-                  x: { ticks: { color: redTheme.color } },
-                  y: { ticks: { color: redTheme.color } },
-                },
-              }}
-            />
-          </Box>
-        </>
-      )}
+      <Box mt={5}>
+        <Typography variant="h6" align="center" gutterBottom>
+          Projected Revenue (Line Chart)
+        </Typography>
+        <Line
+          data={{
+            labels: Array.from({ length: weeks }, (_, i) => `Week ${i + 1}`),
+            datasets: Object.keys(filteredData).map((category, index) => ({
+              label: category,
+              data: revenueData[Object.keys(filteredData).indexOf(category)],
+              borderColor:
+                redTheme.chartColors[index % redTheme.chartColors.length],
+              backgroundColor:
+                redTheme.chartColors[index % redTheme.chartColors.length],
+              fill: true,
+            })),
+          }}
+          options={{
+            responsive: true,
+            scales: {
+              x: { ticks: { color: redTheme.color } },
+              y: { ticks: { color: redTheme.color } },
+            },
+          }}
+        />
+      </Box>
     </Container>
   );
 };
